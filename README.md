@@ -1,2 +1,282 @@
 # Library_management_System_Using_Java_Spring_Boot
 using a java and Spring_boot to develop a Library_Management
+# 📚 Library Management System
+
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
+![Hibernate](https://img.shields.io/badge/Hibernate-JPA-red)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+A **RESTful Library Management System** developed using **Java, Spring Boot, Spring Data JPA, Hibernate, and MySQL**. The application enables efficient management of books, members, and book issue/return operations while following a clean layered architecture.
+
+---
+
+# 🚀 Features
+
+### 📖 Book Management
+
+* Add Book
+* View All Books
+* View Book by ID
+* Update Book
+* Delete Book
+* Search by Title
+* Search by Author
+* Search by Category
+* View Available Books
+
+### 👤 Member Management
+
+* Add Member
+* View Members
+* Update Member
+* Delete Member
+* Search Member by Name
+
+### 📚 Book Issue Management
+
+* Issue Book
+* Return Book
+* Automatic Quantity Update
+* Fine Calculation
+* Issue Status Tracking
+
+### ✅ Validation
+
+* Required Field Validation
+* Email Validation
+* Phone Number Validation
+
+### ⚠️ Exception Handling
+
+* Custom Exceptions
+* Global Exception Handler
+* Clean Error Responses
+
+---
+
+# 🛠️ Technology Stack
+
+| Technology      | Version         |
+| --------------- | --------------- |
+| Java            | 21              |
+| Spring Boot     | 4.x             |
+| Spring Data JPA | Latest          |
+| Hibernate       | Latest          |
+| MySQL           | 8.x             |
+| Maven           | Build Tool      |
+| Postman         | API Testing     |
+| Git & GitHub    | Version Control |
+
+---
+
+# 🏗️ Project Architecture
+
+```text
+                 Client (Postman)
+
+                        │
+                        ▼
+
+               Spring Boot REST API
+
+                        │
+
+        ┌──────── Controller Layer ────────┐
+        │ Receives HTTP Requests           │
+        └──────────────────────────────────┘
+                        │
+                        ▼
+        ┌──────── Service Layer ───────────┐
+        │ Business Logic                   │
+        └──────────────────────────────────┘
+                        │
+                        ▼
+        ┌────── Repository Layer ──────────┐
+        │ Spring Data JPA                  │
+        └──────────────────────────────────┘
+                        │
+                        ▼
+                  MySQL Database
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+LibraryManagementSystem
+│
+├── src
+│   └── main
+│       ├── java
+│       │   └── com.sreedhar.LibraryManagementSystem
+│       │       ├── controller
+│       │       ├── service
+│       │       ├── repository
+│       │       ├── entity
+│       │       ├── dto
+│       │       ├── exception
+│       │       └── LibraryManagementSystemApplication.java
+│       │
+│       └── resources
+│           └── application.properties
+│
+├── pom.xml
+└── README.md
+```
+
+---
+
+# 🗄️ Database Schema
+
+## Books
+
+| Column   | Type    |
+| -------- | ------- |
+| id       | BIGINT  |
+| title    | VARCHAR |
+| author   | VARCHAR |
+| category | VARCHAR |
+| price    | DOUBLE  |
+| quantity | INT     |
+
+## Members
+
+| Column  | Type    |
+| ------- | ------- |
+| id      | BIGINT  |
+| name    | VARCHAR |
+| phone   | VARCHAR |
+| email   | VARCHAR |
+| address | VARCHAR |
+
+## Issue Books
+
+| Column      | Type    |
+| ----------- | ------- |
+| issue_id    | BIGINT  |
+| book_id     | BIGINT  |
+| member_id   | BIGINT  |
+| issue_date  | DATE    |
+| return_date | DATE    |
+| status      | VARCHAR |
+| fine        | DOUBLE  |
+
+---
+
+# 🔗 REST APIs
+
+## 📖 Books
+
+| Method | Endpoint                     |
+| ------ | ---------------------------- |
+| POST   | `/books`                     |
+| GET    | `/books`                     |
+| GET    | `/books/{id}`                |
+| PUT    | `/books/{id}`                |
+| DELETE | `/books/{id}`                |
+| GET    | `/books/title/{title}`       |
+| GET    | `/books/author/{author}`     |
+| GET    | `/books/category/{category}` |
+| GET    | `/books/available`           |
+
+---
+
+## 👤 Members
+
+| Method | Endpoint               |
+| ------ | ---------------------- |
+| POST   | `/members`             |
+| GET    | `/members`             |
+| GET    | `/members/{id}`        |
+| PUT    | `/members/{id}`        |
+| DELETE | `/members/{id}`        |
+| GET    | `/members/name/{name}` |
+
+---
+
+## 📚 Issue Books
+
+| Method | Endpoint              |
+| ------ | --------------------- |
+| POST   | `/issues`             |
+| PUT    | `/issues/{id}/return` |
+
+---
+
+# 📥 Sample Request
+
+## Add Book
+
+```json
+{
+  "title": "Spring Boot",
+  "author": "Rod Johnson",
+  "category": "Programming",
+  "price": 700,
+  "quantity": 5
+}
+```
+
+---
+
+## Issue Book
+
+```json
+{
+  "bookId": 2,
+  "memberId": 1
+}
+```
+
+---
+
+# ▶️ How to Run
+
+1. Clone the repository.
+2. Open the project in Eclipse or IntelliJ IDEA.
+3. Create a MySQL database named `librarydb`.
+4. Configure `application.properties` with your database credentials.
+5. Run `LibraryManagementSystemApplication`.
+6. Test the REST APIs using Postman.
+
+---
+
+# 🎯 Key Concepts Demonstrated
+
+* REST API Development
+* Spring Boot
+* Spring Data JPA
+* Hibernate ORM
+* Layered Architecture
+* Entity Relationships
+* Validation
+* Exception Handling
+* CRUD Operations
+* Business Logic
+* MySQL Integration
+
+---
+
+# 📚 Future Enhancements
+
+* Spring Security with JWT Authentication
+* Swagger / OpenAPI Documentation
+* Pagination & Sorting
+* Docker Support
+* Unit Testing (JUnit & Mockito)
+* Cloud Deployment (AWS, Render, Railway)
+
+---
+
+# 👨‍💻 Author
+
+**Thirupati Sreedhar**
+
+* Java Backend Developer (Fresher)
+* Passionate about Java, Spring Boot, REST APIs, and Backend Development.
+
+⭐ If you found this project useful, consider giving it a star on GitHub.
+
