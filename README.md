@@ -5,8 +5,7 @@ using a java and Spring_boot to develop a Library_Management
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
-![Hibernate](https://img.shields.io/badge/Hibernate-JPA-red)
-![License](https://img.shields.io/badge/License-MIT-green)
+
 
 A **RESTful Library Management System** developed using **Java, Spring Boot, Spring Data JPA, Hibernate, and MySQL**. The application enables efficient management of books, members, and book issue/return operations while following a clean layered architecture.
 
